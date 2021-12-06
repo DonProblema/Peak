@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PEAK Diving Services</title>
+
+    <!--HOJA DE ESTILOS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+
+    <!-- Animate CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <header id="header">
+        <div class="center">
+            <!-- LOGO -->
+            <div id="logo">
+                <img src="assets/images/PEAK.jpg" class="app-logo" alt="Logotipo" />
+            </div>
+
+            <!-- MENU -->
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!--LIMPIAR FLOTADOS-->
+            <div class="clearfix"></div>
+        </div>
+    </header>
+    <form id="register" class="center" method="post" action="register.php">
+        <div class="container">
+            <h2>Register</h2>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <div class="form-control">
+                <label for="fname"><b>First Name</b></label>
+                <input type="text" placeholder="Enter Name" name="fName" id="fName">
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+                <label for="lname"><b>Last Name</b></label>
+                <input type="text" placeholder="Enter Last Name" name="lName" id="lName">
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+                <label for="ccenter"><b>Cultivation Center Name</b></label>
+                <input type="text" placeholder="Enter Cultivation Center Name" name="cCenter" id="cCenter">
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+                <label for="company"><b>Company</b></label>
+                <input type="text" placeholder="Enter Company" name="company" id="company">
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+                <label for="jtitle"><b>Job Title</b></label>
+                <input type="text" placeholder="Enter Job Title" name="jTitle" id="jTitle">
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+                <label for="phone"><b>Phone Number</b></label>
+                <input type="text" placeholder="Enter Phone Number" name="phone" id="phone">
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="email" id="email">
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="psw">
+                <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat">
+                <small>Error message</small>
+            </div>
+            <hr>
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+            <button type="submit" class="registerbtn">Register</input>
+        </div>
+
+        <div class="container signin">
+            <p>Already have an account? <a href="#">Sign in</a>.</p>
+        </div>
+    </form>
+    <footer id="footer">
+        <div class="center">
+            <p class="copy">
+                &copy; Copyright 2021
+            </p>
+            <p class="copy">
+                Built by
+                <a href="https://www.linkedin.com/in/alejandrofernandezb/" target="_blank">Alejandro Fernández
+                    Barrientos</a>
+            </p>
+            <i class="scroll-up" id="scroll-up"><img src="assets/icons/arrow-up.png" class="socicon up-arrow"
+                    alt="scroll-up" /></i>
+        </div>
+    </footer>
+
+    <!-- Website scripts -->
+    <script src="assets/js/register.js"></script>
+    <!-- Google reCaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+    <!-- Ion icons scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
