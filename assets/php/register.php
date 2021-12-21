@@ -16,7 +16,7 @@ if (!$conn) {
     $txtJTitle = $_POST["jTitle"];
     $txtPhone = $_POST["phone"];
     $txtEmail = $_POST["email"];
-    $txtPassword = $_POST["psw"];
+    $txtPassword = MD5($_POST["psw"]);
 
 //insert into database SQL
     $sql = "INSERT INTO accounts (id_client, first_name, last_name, job_title, cultivation_center, company, email, phone, password) VALUES ('0','$txtFName', '$txtLName', '$txtJTitle', '$txtCCenter', '$txtCompany', '$txtEmail', '$txtPhone', '$txtPassword')";
@@ -30,5 +30,6 @@ if (mysqli_query($conn, $sql)) {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-
 mysqli_close($conn);
+
+?>
