@@ -1,17 +1,13 @@
 <?php
 
-// database parameters
-$hostname = getenv('DBA_PEAK_HOSTNAME');
-$username = getenv('DBA_PEAK_USERNAME');
-$password = getenv('DBA_PEAK_PASSWORD');
-$database = getenv('DBA_PEAK_DATABASE');
+include("../../../data/configuration.php");
 
-// database connection
-try {
-    $pdo = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo 'Connected successfully!';
-
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
     // get the form information
     $txtFName = $_POST["fName"];
     $txtLName = $_POST["lName"];
@@ -23,15 +19,16 @@ try {
     $txtPassword = $_POST["psw"];
 
 //insert into database SQL
-    $sql = "INSERT INTO clients (id_client, first_name, last_name, job_title, cultivation_center, company, email, phone, password) VALUES ('0', $txtFName, $txtLName, $txtJTitle, $txtCCenter, $txtCompany, $txtPhone, $txtEmail, $txtPassword)";
+    $sql = "INSERT INTO accounts (id_client, first_name, last_name, job_title, cultivation_center, company, email, phone, password) VALUES ('0','$txtFName', '$txtLName', '$txtJTitle', '$txtCCenter', '$txtCompany', '$txtEmail', '$txtPhone', '$txtPassword')";
 
-// use exec() because no results are returned
-    $pdo->exec($sql);
-    echo "New record created successfully";
-} catch(PDOException $e) {
-    die('Error ' . $e->getMessage());
-} 
+if (mysqli_query($conn, $sql)) {
+  //echo "New record created successfully";
+  //include "../../index.html";
+  header("Location: http://www.peak.cl/"); 
+    exit();
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
-$pdo = null;
 
-?>
+mysqli_close($conn);

@@ -83,7 +83,7 @@ function getFieldName(input) {
 form.addEventListener("submit", function (e) {
   //e.preventDefault();
 
-  if (!checkRequired([fname, lname, ccenter, company, jtitle, phone, email, password, password2])) {
+  if (!checkRequired([fname, lname, phone, email, password, password2])) {
     checkLength(fname, 3, 15);
     checkLength(lname, 3, 15);
     checkLength(password, 6, 25);
